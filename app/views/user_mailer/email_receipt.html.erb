@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for your order! Order Id: <%= @order.id %></h1>
+    <p>
+      We got your order and are currently processing it!
+      Order ID: <%= @order.id %>
+      Total: $<%= @order.total_cents / 100.0 %>
+    </p>
+    <p>
+      Here is your order:
+    </p>
+    </div>
+ <div class="pannel-body">
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.line_items.each do |line_item| %>
+         <%= render 'item', item: line_item %>
+        <% end %>
+      </tbody>
+    </table>
+ </div>
+ </div>
+  </body>
+</html>
