@@ -2,11 +2,23 @@
 
 <%= form_for :user, url: '/users' do |f| %>
 
-First Name: <%= f.text_field :firstname %>
-Last Name: <%= f.text_field :lastname%>
-Email: <%= f.text_field :email %>
-Password: <%= f.password_field :password %>
-Password Confirmation: <%= f.password_field :password_confirmation %>
+<div classname="signup-info">
+First Name: &nbsp&nbsp&nbsp<%= f.text_field :firstname %>
+</div>
+<div classname="signup-info">
+Last Name: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= f.text_field :lastname%>
+</div>
+<div classname="signup-info">
+Email:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <%= f.text_field :email %>
+</div>
+<div classname="signup-info">
+Password: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= f.password_field :password %>
+</div>
+<div classname="signup-info">
+Password Confirmation: &nbsp&nbsp&nbsp<%= f.password_field :password_confirmation %>
+</div>
+<div classname="signup-button">
 <%= f.submit "Submit" %>
+</div>
 
 <% end %>
