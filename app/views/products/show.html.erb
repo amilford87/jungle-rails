@@ -25,17 +25,23 @@
         </dl>
       </div>
     </div>
-
-  <br>
-  <br>
+    <br><br>
+<% if @product.reviews.any? %>
+<h3> Average Rating: <%= @product.reviews.average(:rating) %></h3>
+<% end %>
+<div>
+</div>
   <div >
+  <% if current_user %>
   <%= form_for [@product, @review] do |form| %>
  <%= form.label "Rating:"%> <%= form.select :rating, [1, 2, 3, 4, 5] %><br />
-  <%= form.label "Review:" %> <%= form.text_field :description, :style => "width:28%;" %><br />
+  <%= form.label "Review:" %> <%= form.text_field :description, :style => "width:28%;" %><p class="error"><%= @error %></p>
   <%= form.submit %>
   <% end %>
   </div>
+  <% end %>
   <br />
+<h4> Product Reviews </h4>
  <div class="col-sm-4">
     <table class="table table-bordered">
       <thead>
@@ -43,17 +49,27 @@
           <th>User</th>
           <th>Rating</th>
           <th>Review</th>
+          <th>Delete</th>
            </tr>
       </thead>
       <tbody>
       <tr>
-      <% @product.reviews.each do |review| %>
+      <% @product.reviews.reverse_each do |review| %>
     <div>
+    <% if review.description != ''%>
     <td><%= review.user.firstname %></td>
     <td><%= review.rating%> / 5</td>
     <td>
     <%= review.description %>
     </td>
+    <td>
+    <% if review.user == current_user %>
+    <%= link_to fa_icon('trash'), [review.product, review],
+                method: :delete,
+                data: { confirm: "Are you sure?"} %>
+  <% end %>
+  </td>
+    <% end %>
     </tr><% end %>
      </tbody>
      </table>
