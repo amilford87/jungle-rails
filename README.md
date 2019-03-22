@@ -14,7 +14,13 @@ Demonstation of ability working on an existing code base and new language (Ruby)
 
 ##Screenshot
 
+!["Screenshot of Orders"](https://github.com/amilford87/jungle-rails/blob/master/docs/shopfront.png)
 
+!["Screenshot of Orders"](https://github.com/amilford87/jungle-rails/blob/master/docs/order.png)
+
+!["Screenshot of Catagories"](https://github.com/amilford87/jungle-rails/blob/master/docs/catagories.png)
+
+!["Screenshot of Empty-Cart"](https://github.com/amilford87/jungle-rails/blob/master/docs/empty-cart.png)
 
 ## Setup
 
