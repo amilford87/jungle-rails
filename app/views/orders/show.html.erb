@@ -8,12 +8,12 @@
     <div>
     <h3>Thank you for your order! - <strong><%= @order.email %></strong></h3>
   </div>
- <div class="pannel pannel-default">
- <div class="pannel-heading">
- <h3 class="pannel-title"><p>Order Total = $<%= @order.total_cents / 100.0 %></p></h3>
- </div>
- <div class="pannel-body">
-  <table class="table table-bordered">
+  <div class="pannel pannel-default">
+  <div class="pannel-heading">
+    <h3 class="pannel-title"><p>Order Total = $<%= @order.total_cents / 100.0 %></p></h3>
+  </div>
+  <div class="pannel-body">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th colspan="2">Product</th>
@@ -28,12 +28,12 @@
         <% end %>
       </tbody>
     </table>
- </div>
- </div>
-  </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+<%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
