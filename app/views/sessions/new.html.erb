@@ -2,11 +2,12 @@
 
 <%= form_tag '/login' do %>
 
-<div class="login-info">
-Email: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= text_field_tag :email %>
+<div class="container">
+Email: <%= text_field_tag :email %>
+
 </div>
 <div class="login-info">
-Password: &nbsp&nbsp<%= password_field_tag :password %>
+Password: <%= password_field_tag :password %>
 </div>
 <div class="login-button">
 <%= submit_tag "Login" %>

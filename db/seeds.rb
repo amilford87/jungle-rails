@@ -29,6 +29,7 @@ cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
+
 ## PRODUCTS
 
 puts "Re-creating Products ..."
@@ -131,6 +132,68 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+
+puts "Finding products by name"
+
+prod1 = Product.find_by id: 1
+prod2 = Product.find_by id: 2
+prod3 = Product.find_by id: 3
+prod4 = Product.find_by id: 4
+prod5 = Product.find_by id: 5
+prod6 = Product.find_by id: 6
+prod7 = Product.find_by id: 7
+prod8 = Product.find_by id: 8
+prod9 = Product.find_by id: 9
+prod10 = Product.find_by id: 10
+prod11 = Product.find_by id: 11
+prod12 = Product.find_by id: 12
+
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+prod1.reviews.create!({
+  product_id: 1,
+  user_id: 2,
+  description: "I love it!",
+  rating: 4
+})
+prod1.reviews.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "Shipping took too long!",
+  rating: 1
+})
+
+prod1.reviews.create!({
+  product_id: 1,
+  user_id: 3,
+  description: "Great!",
+  rating: 3
+})
+
+prod2.reviews.create!({
+  product_id: 2,
+  user_id: 1,
+  description: "Great!!",
+  rating: 4
+})
+
+prod2.reviews.create!({
+  product_id: 2,
+  user_id: 2,
+  description: "It's my favourite!",
+  rating: 5
+})
+
+prod2.reviews.create!({
+  product_id: 2,
+  user_id: 3,
+  description: "Who wouldn't want one?!",
+  rating: 5
+})
+
+
 
 
 puts "DONE!"

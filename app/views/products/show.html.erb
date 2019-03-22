@@ -26,6 +26,39 @@
       </div>
     </div>
 
-  </article>
+  <br>
+  <br>
+  <div >
+  <%= form_for :review do |form| %>
+ <%= form.label "Rating:"%> <%= form.select :rating, [1, 2, 3, 4, 5] %><br />
+  <%= form.label "Review:" %> <%= form.text_field :description, :style => "width:28%;" %><br />
+  <%= form.submit %>
+  <% end %>
+  </div>
+  <br />
+ <div class="col-sm-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Rating</th>
+          <th>Review</th>
+           </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <% @product.reviews.each do |review| %>
+    <div>
+    <td><%= review.user.firstname %></td>
+    <td><%= review.rating%> / 5</td>
+    <td>
+    <%= review.description %>
+    </td>
+    </tr><% end %>
+     </tbody>
+     </table>
+    </div>
 
+
+  </article>
 </section>
