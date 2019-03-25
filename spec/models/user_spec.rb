@@ -62,4 +62,8 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages.include? "Password is too short (minimum is 6 characters)").to eql(true)        
       end
   end
+
+  describe '.authenticate_with_credentials' do
+    
+  end
 end
