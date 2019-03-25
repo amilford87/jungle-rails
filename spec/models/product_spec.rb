@@ -6,7 +6,6 @@ RSpec.describe Product, type: :model do
     @cat1 = Category.new name: 'Whatever'
     @cat1.save
     @product = @cat1.products.new
-    @product.save
     @product.name = 'product'
     @product.price = 999.00
     @product.quantity = 45
