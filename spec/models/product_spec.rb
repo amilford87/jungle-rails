@@ -24,7 +24,7 @@ RSpec.describe Product, type: :model do
 
     it 'is not valid without a price' do
       @product2 = @cat1.products.new(name: 'product2', quantity: 45)
-      @product2.save
+      @product2.save 
       expect(@product2.errors.full_messages.include? "Price can't be blank").to eql(true)
     end
 
