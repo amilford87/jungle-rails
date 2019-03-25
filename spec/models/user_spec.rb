@@ -64,6 +64,30 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    
+    before (:each) do
+      User.destroy_all
+      @user3 = User.create!(firstname: 'John', lastname: 'Smith', email: 'js@js.com', password: 'password1', password_confirmation: 'password1')
+    end
+
+      it 'is able to login with a matching email' do
+        expect(User.authenticate_with_credentials(@user3.email, @user3.password)).to eq(@user3)
+      end
+
+      it 'should not log in with a wrong email' do
+        expect(User.authenticate_with_credentials('test2@test.com', @user3.password)).to eq(nil)
+      end
+
+      it 'should not be able to log in with a wrong password' do
+        expect(User.authenticate_with_credentials(@user3.email, 'password2')).to eq(nil)
+      end
+
+      it 'should be able to log in with spaces in the email' do
+        expect(User.authenticate_with_credentials('  js@js.com  ', @user3.password)).to eq(@user3)
+      end
+
+      it 'should be able to log in even if in wrong case' do
+        expect(User.authenticate_with_credentials('JS@js.com', @user3.password)).to eq(@user3)
+      end
   end
+  
 end
