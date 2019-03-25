@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
+    
     cat1 = Category.new name: 'Whatever'
     product = cat1.products.new
     product.name = 'product'
